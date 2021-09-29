@@ -48,6 +48,7 @@ func (c *Client) GetStargazers(owner, repo string) ([]*github.Stargazer, error) 
 	sort.Slice(stars, func(i, j int) bool {
 		return stars[i].StarredAt.Before(stars[j].StarredAt.Time)
 	})
+        println(len(stars))
 	return stars, nil
 }
 
